@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mike Rinaldi | Hitting Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f2ead8;
+    --navy: #1a2744;
+    --red: #c0392b;
+    --gold: #d4a017;
+    --dark: #0f1a2e;
+    --muted: #7a8a6a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: var(--cream);
+    font-family: 'Barlow', sans-serif;
+    color: var(--navy);
+    min-height: 100vh;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(26,39,68,0.06) 39px, rgba(26,39,68,0.06) 40px),
+      repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(26,39,68,0.06) 39px, rgba(26,39,68,0.06) 40px);
+  }
+
+  /* HEADER */
+  header {
+    background: var(--navy);
+    border-bottom: 4px solid var(--red);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    color: var(--cream);
+    letter-spacing: 2px;
+  }
+  .logo span { color: var(--red); }
+
+  /* ABOUT SECTION */
+  .about-section {
+    max-width: 1100px;
+    margin: 0 auto 4rem;
+    padding: 0 2rem;
+  }
+
+  .about-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .about-card {
+    background: var(--navy);
+    border: 3px solid var(--gold);
+    padding: 2rem;
+    box-shadow: 6px 6px 0 var(--red);
+    text-align: center;
+    position: sticky;
+    top: 90px;
+  }
+
+  .about-card-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .about-card-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    color: var(--cream);
+    letter-spacing: 3px;
+  }
+
+  .about-card-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    color: var(--gold);
+    font-size: 0.82rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+  }
+
+  .about-card-divider {
+    width: 50%;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.3;
+    margin: 0 auto 1.25rem;
+  }
+
+  .about-cred-list {
+    list-style: none;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .about-cred-list li {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(242,234,216,0.8);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .about-cred-list li::before {
+    content: '▸';
+    color: var(--gold);
+    font-size: 0.7rem;
+  }
+
+  .about-cred-list li strong {
+    color: var(--cream);
+  }
+
+  .about-content p {
+    font-size: 0.98rem;
+    color: #4a5a7a;
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+  }
+
+  .about-content p:last-child { margin-bottom: 0; }
+
+  .about-content strong { color: var(--navy); }
+
+  .about-pull {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    color: var(--navy);
+    letter-spacing: 1px;
+    line-height: 1.1;
+    border-left: 4px solid var(--red);
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  @media (max-width: 768px) {
+    .about-wrapper { grid-template-columns: 1fr; }
+    .about-card { position: static; }
+  }
+
+  nav a {
+    color: var(--cream);
+    text-decoration: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-left: 2rem;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+  }
+  nav a:hover { opacity: 1; color: var(--gold); }
+
+  /* HERO */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 520px;
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .badge {
+    display: inline-block;
+    background: var(--red);
+    color: white;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5.5rem;
+    line-height: 0.92;
+    color: var(--navy);
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+  }
+  h1 .accent { color: var(--red); display: block; }
+
+  .hero-sub {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.15rem;
+    color: #4a5a7a;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    max-width: 380px;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: var(--red);
+    color: white;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    padding: 14px 36px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.1s;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  }
+  .cta-btn:hover { background: #a93226; transform: translateY(-1px); }
+
+  .hero-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(26,39,68,0.15);
+  }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    color: var(--navy);
+    line-height: 1;
+  }
+  .stat-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #7a8a9a;
+  }
+
+  /* HERO VISUAL */
+  .hero-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .diamond-card {
+    width: 340px;
+    background: var(--navy);
+    border: 3px solid var(--gold);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 2rem;
+    box-shadow: 8px 8px 0 var(--red);
+  }
+
+  .diamond-card::before {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba(212,160,23,0.3);
+  }
+
+  .diamond-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 20px rgba(212,160,23,0.3));
+  }
+
+  .card-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    color: var(--cream);
+    letter-spacing: 3px;
+    text-align: center;
+  }
+
+  .card-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    color: var(--gold);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 0.3rem;
+    text-align: center;
+  }
+
+  .card-divider {
+    width: 60%;
+    height: 1px;
+    background: var(--gold);
+    margin: 1rem auto;
+    opacity: 0.4;
+  }
+
+  .card-details {
+    font-family: 'Barlow Condensed', sans-serif;
+    color: rgba(242,234,216,0.7);
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 2;
+  }
+
+  .card-cred {
+    font-family: 'Barlow Condensed', sans-serif;
+    color: var(--gold);
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(212,160,23,0.25);
+    line-height: 1.7;
+    opacity: 0.85;
+  }
+
+  /* PHILOSOPHY SECTION */
+  .section {
+    max-width: 1100px;
+    margin: 0 auto 4rem;
+    padding: 0 2rem;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 3px solid var(--navy);
+    padding-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem;
+    color: var(--navy);
+    letter-spacing: 2px;
+  }
+
+  .section-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    color: var(--red);
+    letter-spacing: 2px;
+  }
+
+  .philosophy-intro {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.2rem;
+    color: #4a5a7a;
+    line-height: 1.6;
+    max-width: 700px;
+    margin-bottom: 2.5rem;
+  }
+  .philosophy-intro strong {
+    color: var(--navy);
+  }
+
+  .kinetic-chain {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .chain-card {
+    background: white;
+    border: 2px solid var(--navy);
+    padding: 1.75rem;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .chain-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 4px 4px 0 var(--navy);
+  }
+
+  .chain-step {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    color: rgba(26,39,68,0.07);
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    line-height: 1;
+  }
+
+  .chain-label {
+    display: inline-block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 2px;
+    margin-bottom: 0.75rem;
+  }
+  .label-lower { background: #e8f0fe; color: #2a5bb5; }
+  .label-rotation { background: #fde8e8; color: var(--red); }
+  .label-hands { background: #e8f8e8; color: #2a7a2a; }
+  .label-zone { background: #fef0e8; color: #b55a00; }
+
+  .chain-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--navy);
+    margin-bottom: 0.6rem;
+  }
+
+  .chain-desc {
+    font-size: 0.92rem;
+    color: #5a6a7a;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .chain-cue {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.82rem;
+    color: var(--red);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  .chain-cue span {
+    display: inline-block;
+    background: rgba(192,57,43,0.08);
+    border: 1px solid rgba(192,57,43,0.2);
+    padding: 2px 8px;
+    border-radius: 2px;
+    margin: 2px 3px 2px 0;
+  }
+
+  .principle-bar {
+    background: var(--navy);
+    border: 2px solid var(--gold);
+    padding: 1.75rem 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: 6px 6px 0 var(--red);
+  }
+
+  .principle-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+  }
+
+  .principle-text h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-bottom: 0.3rem;
+  }
+
+  .principle-text p {
+    font-family: 'Barlow Condensed', sans-serif;
+    color: rgba(242,234,216,0.8);
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  /* BOOKING SECTION */
+  .booking-section {
+    max-width: 1100px;
+    margin: 0 auto 5rem;
+    padding: 0 2rem;
+  }
+
+  .booking-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 3rem;
+    background: var(--navy);
+    padding: 3rem;
+    border: 3px solid var(--gold);
+    box-shadow: 10px 10px 0 var(--red);
+  }
+
+  .booking-info h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem;
+    color: var(--cream);
+    letter-spacing: 2px;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+  .booking-info h2 span { color: var(--gold); }
+
+  .booking-info p {
+    color: rgba(242,234,216,0.7);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .info-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .info-list li {
+    font-family: 'Barlow Condensed', sans-serif;
+    color: var(--cream);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .info-list li::before {
+    content: '⚾';
+    font-size: 0.8rem;
+  }
+
+  /* FORM */
+  .booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .form-group label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: rgba(242,234,216,0.07);
+    border: 1px solid rgba(212,160,23,0.3);
+    color: var(--cream);
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.95rem;
+    padding: 10px 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: rgba(242,234,216,0.3); }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--gold); }
+  .form-group select option { background: var(--navy); }
+
+  .submit-btn {
+    background: var(--red);
+    color: white;
+    border: none;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+    padding: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+    clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+    margin-top: 0.5rem;
+  }
+  .submit-btn:hover { background: #a93226; }
+  .submit-btn:disabled { background: #555; cursor: not-allowed; }
+
+  /* STATUS MESSAGES */
+  .status-msg {
+    display: none;
+    padding: 1rem 1.25rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    border-radius: 2px;
+    margin-top: 0.5rem;
+  }
+  .status-msg.success {
+    display: block;
+    background: rgba(46,160,67,0.2);
+    border: 1px solid #2ea043;
+    color: #7ee787;
+  }
+  .status-msg.error {
+    display: block;
+    background: rgba(192,57,43,0.2);
+    border: 1px solid var(--red);
+    color: #ff9999;
+  }
+  .status-msg.loading {
+    display: block;
+    background: rgba(212,160,23,0.1);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark);
+    color: rgba(242,234,216,0.5);
+    text-align: center;
+    padding: 2rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+  }
+  footer strong { color: var(--cream); }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    h1 { font-size: 3.5rem; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .kinetic-chain { grid-template-columns: 1fr; }
+    .booking-wrapper { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .principle-bar { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">Rinaldi <span>Baseball</span></div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#philosophy">Philosophy</a>
+    <a href="#book">Book a Lesson</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <span class="badge">⚾ Private Hitting Instruction</span>
+    <h1>Step Up<span class="accent">To The Plate.</span></h1>
+    <p class="hero-sub">One-on-one hitting lessons with Mike Rinaldi — a college hitter who trained alongside former MLB players and built a swing system that actually works.</p>
+    <a href="#book" class="cta-btn">Book Your Lesson</a>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">1:1</div>
+        <div class="stat-label">Private Sessions</div>
+      </div>
+      <div>
+        <div class="stat-num">10–16</div>
+        <div class="stat-label">Age Range</div>
+      </div>
+      <div>
+        <div class="stat-num">MLB</div>
+        <div class="stat-label">Players Trained With</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="diamond-card">
+      <div class="diamond-icon">⚾</div>
+      <div class="card-name">Mike Rinaldi</div>
+      <div class="card-title">Hitting Instructor</div>
+      <div class="card-divider"></div>
+      <div class="card-details">
+        Private 1-on-1 · Ages 10–16<br>
+        All Skill Levels Welcome<br>
+        $75 / Hour
+      </div>
+      <div class="card-cred">
+        Trained Alongside Former MLB Players<br>
+        Univ. of Tampa · Seminole State · Greensboro
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="about-section" id="about">
+  <div class="section-header">
+    <span class="section-num">01 /</span>
+    <h2 class="section-title">About Mike</h2>
+  </div>
+  <div class="about-wrapper">
+
+    <div class="about-card">
+      <div class="about-card-icon">⚾</div>
+      <div class="about-card-name">Mike Rinaldi</div>
+      <div class="about-card-title">Hitting Instructor</div>
+      <div class="about-card-divider"></div>
+      <div class="card-details" style="line-height:2.1;">
+        University of Tampa<br>
+        Seminole State College<br>
+        Greensboro College<br>
+        <span style="color:var(--gold);">Trained w/ Former MLB Players</span><br>
+        <span style="color:rgba(242,234,216,0.5); font-size:0.8rem; letter-spacing:1px;">.358 · 8 HR · .659 SLG</span>
+      </div>
+    </div>
+
+    <div class="about-content">
+      <p>
+        I started at the University of Tampa, where I redshirted and spent a year doing nothing but learning. Kevin Kiermaier — Platinum Glove outfielder for the Tampa Bay Rays — loved to come out and play and practice at our field. Having an established MLB player around like that, you soak up everything you can. I absorbed everything I could. I transferred to Seminole State, where former MLB players like Adam Haseley — outfielder for the Philadelphia Phillies — would come in and work with us. Then I got seriously hurt. Labrum surgery the fall before the season. I couldn't swing a bat, so I did what I always did: watched, listened, and learned. When I finally got healthy and got my shot at Greensboro College, it all came together — .358 average, 8 home runs, 34 RBI, 11 doubles, a triple, 12 walks, .421 on-base, .659 slugging in 34 games. The system works. I know it works because I lived it. And honestly? I wish I had this knowledge when I was 12 years old. That's why I do this — to give the next generation a real foundation, so they're not figuring it out the hard way like I did.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- PHILOSOPHY SECTION -->
+<section class="section" id="philosophy">
+  <div class="section-header">
+    <span class="section-num">02 /</span>
+    <h2 class="section-title">The Approach</h2>
+  </div>
+
+  <p class="philosophy-intro">
+    <strong>Violence through the middle.</strong> Every part of the swing has one job: direct energy back to the pitcher. Everything else is built around making that happen.
+  </p>
+
+  <div class="kinetic-chain">
+
+    <div class="chain-card">
+      <div class="chain-step">1</div>
+      <span class="chain-label label-lower">Lower Half</span>
+      <div class="chain-title">The Engine — Ground Up</div>
+      <div class="chain-desc">Power comes from the ground. Back foot loads, front foot plants. The legs drive everything.</div>
+    </div>
+
+    <div class="chain-card">
+      <div class="chain-step">2</div>
+      <span class="chain-label label-rotation">Rotation</span>
+      <div class="chain-title">Fire, Then Hit the Brakes</div>
+      <div class="chain-desc">Start the rotation, fire hard, then hit the brakes fast. That sudden stop is what releases the hands and creates real bat speed.</div>
+    </div>
+
+    <div class="chain-card">
+      <div class="chain-step">3</div>
+      <span class="chain-label label-hands">Hands</span>
+      <div class="chain-title">Tight and Whip</div>
+      <div class="chain-desc">Hands tight to the body, then extend through the pitch. No casting. No looping.</div>
+    </div>
+
+    <div class="chain-card">
+      <div class="chain-step">4</div>
+      <span class="chain-label label-zone">Hitting Zone</span>
+      <div class="chain-title">Short to It, Long Through It</div>
+      <div class="chain-desc">Take the shortest path to the ball, then stay through the pitch as long as possible. Quick in, violent through.</div>
+    </div>
+
+  </div>
+
+  <div class="principle-bar">
+    <div class="principle-icon">⚡</div>
+    <div class="principle-text">
+      <h3>Violence Through The Middle</h3>
+      <p>Direction back to the pitcher. Every cue, every correction, every session is built around <strong style="color:var(--gold)">driving the barrel through the middle of the field</strong> with intent.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING SECTION -->
+<section class="booking-section" id="book">
+  <div class="section-header" style="max-width:1100px;margin:0 auto 0;padding:0 2rem 0;">
+    <span class="section-num">03 /</span>
+    <h2 class="section-title">Book A Session</h2>
+  </div>
+  <div class="booking-wrapper" style="margin-top:2rem;">
+    <div class="booking-info">
+      <p>Fill out the form and your lesson will be added directly to the schedule. You'll receive a confirmation once it's locked in.</p>
+      <ul class="info-list">
+        <li>Private 1-on-1 sessions</li>
+        <li>Ages 10–16 (all skill levels)</li>
+        <li>60-minute sessions</li>
+        <li>Mechanics, bat speed &amp; mental approach</li>
+        <li>Instant calendar confirmation</li>
+      </ul>
+    </div>
+
+    <div>
+      <form class="booking-form" action="https://formspree.io/f/maqzwrdr" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Player Name</label>
+            <input type="text" name="player_name" placeholder="First Last" required>
+          </div>
+          <div class="form-group">
+            <label>Parent / Guardian</label>
+            <input type="text" name="parent_name" placeholder="First Last">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="_replyto" placeholder="you@email.com" required>
+          </div>
+          <div class="form-group">
+            <label>Player Age</label>
+            <select name="player_age" required>
+              <option value="">Select age</option>
+              <option>10</option><option>11</option><option>12</option>
+              <option>13</option><option>14</option><option>15</option>
+              <option>16</option><option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Preferred Date</label>
+            <input type="date" name="preferred_date" required>
+          </div>
+          <div class="form-group">
+            <label>Preferred Time</label>
+            <select name="preferred_time" required>
+              <option value="">Select time</option>
+              <option>9:00 AM</option>
+              <option>10:00 AM</option>
+              <option>11:00 AM</option>
+              <option>12:00 PM</option>
+              <option>1:00 PM</option>
+              <option>2:00 PM</option>
+              <option>3:00 PM</option>
+              <option>4:00 PM</option>
+              <option>5:00 PM</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Goals / What They're Working On (optional)</label>
+          <textarea name="goals" rows="3" placeholder="e.g. struggles with inside pitches, wants to improve bat speed..."></textarea>
+        </div>
+        <input type="hidden" name="_subject" value="New Lesson Request — Rinaldi Baseball">
+        <button type="submit" class="submit-btn">Book My Lesson ⚾</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <strong>Mike Rinaldi Baseball</strong> &nbsp;·&nbsp; Private Hitting Lessons &nbsp;·&nbsp; Ages 10–16
+</footer>
+
+<script>
+  // Set min date to today
+  document.querySelector('input[type="date"]').min = new Date().toISOString().split('T')[0];
+</script>
+</body>
+</html>
