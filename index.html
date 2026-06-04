@@ -793,74 +793,11 @@
     <span class="section-num">03 /</span>
     <h2 class="section-title">Book A Session</h2>
   </div>
-  <div class="booking-wrapper" style="margin-top:2rem;">
-    <div class="booking-info">
-      <p>Fill out the form and your lesson will be added directly to the schedule. You'll receive a confirmation once it's locked in.</p>
-      <ul class="info-list">
-        <li>Private 1-on-1 sessions</li>
-        <li>Ages 10–16 (all skill levels)</li>
-        <li>60-minute sessions</li>
-        <li>Mechanics, bat speed &amp; mental approach</li>
-        <li>Instant calendar confirmation</li>
-      </ul>
-    </div>
-
-    <div>
-      <form class="booking-form" action="https://formspree.io/f/maqzwrdr" method="POST">
-        <div class="form-row">
-          <div class="form-group">
-            <label>Player Name</label>
-            <input type="text" name="player_name" placeholder="First Last" required>
-          </div>
-          <div class="form-group">
-            <label>Parent / Guardian</label>
-            <input type="text" name="parent_name" placeholder="First Last">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Email</label>
-            <input type="email" name="_replyto" placeholder="you@email.com" required>
-          </div>
-          <div class="form-group">
-            <label>Player Age</label>
-            <select name="player_age" required>
-              <option value="">Select age</option>
-              <option>10</option><option>11</option><option>12</option>
-              <option>13</option><option>14</option><option>15</option>
-              <option>16</option><option>Other</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Preferred Date</label>
-            <input type="date" name="preferred_date" required>
-          </div>
-          <div class="form-group">
-            <label>Preferred Time</label>
-            <select name="preferred_time" required>
-              <option value="">Select time</option>
-              <option>9:00 AM</option>
-              <option>10:00 AM</option>
-              <option>11:00 AM</option>
-              <option>12:00 PM</option>
-              <option>1:00 PM</option>
-              <option>2:00 PM</option>
-              <option>3:00 PM</option>
-              <option>4:00 PM</option>
-              <option>5:00 PM</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Goals / What They're Working On (optional)</label>
-          <textarea name="goals" rows="3" placeholder="e.g. struggles with inside pitches, wants to improve bat speed..."></textarea>
-        </div>
-        <input type="hidden" name="_subject" value="New Lesson Request — Rinaldi Baseball">
-        <button type="submit" class="submit-btn">Book My Lesson ⚾</button>
-      </form>
-    </div>
+  <div class="booking-wrapper" style="margin-top:2rem;display:block;padding:2rem 3rem;">
+    <p style="font-family:'Barlow Condensed',sans-serif;font-size:1rem;color:rgba(242,234,216,0.7);margin-bottom:1.5rem;">Pick a time that works — your lesson will be instantly confirmed and added to both your calendar and mine.</p>
+    <!-- Calendly inline widget -->
+    <div class="calendly-inline-widget" data-url="https://calendly.com/mikerinaldi13?hide_gdpr_banner=1&background_color=1a2744&text_color=f2ead8&primary_color=c0392b" style="min-width:320px;height:700px;"></div>
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
   </div>
 </section>
 
@@ -868,9 +805,5 @@
   <strong>Mike Rinaldi Baseball</strong> &nbsp;·&nbsp; Private Hitting Lessons &nbsp;·&nbsp; Ages 10–16
 </footer>
 
-<script>
-  // Set min date to today
-  document.querySelector('input[type="date"]').min = new Date().toISOString().split('T')[0];
-</script>
 </body>
 </html>
